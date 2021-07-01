@@ -3,6 +3,7 @@
 import cmd
 from models.base_model import BaseModel
 
+
 class HBNBCommand(cmd.Cmd):
     """ HBNBCommand class definition """
     prompt = '(hbnb)'
@@ -26,7 +27,10 @@ class HBNBCommand(cmd.Cmd):
         print(new.id)
 
     def do_show(self, arg):
-        'Prints the string representation of an instance based on the class name and id'
+        """
+        Prints the string representation of an instance
+        based on the class name and id
+        """
         neww = BaseModel()
         if len(arg) == 0:
             print("** class name missing **")
@@ -37,7 +41,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** no instance found **")
         print("{} {}".format(neww.__class__.__name__, neww.id))
-    
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
